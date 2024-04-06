@@ -13,11 +13,11 @@
     - tmux source-file ~/.tmux.conf
 
 ## Profile
-# Remap Caps Lock to Escape
+```bash
 setxkbmap -option caps:escape
-
 if [[ ! -z "$TMUX" && -n "$SSH_CONNECTION" ]]; then
     tmux attach
 else
     tmux new-session -A -s default
 fi
+```
