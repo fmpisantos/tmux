@@ -12,3 +12,12 @@
     ```
     - tmux source-file ~/.tmux.conf
 
+## Profile
+```bash
+setxkbmap -option caps:escape
+if [[ ! -z "$TMUX" && -n "$SSH_CONNECTION" ]]; then
+    tmux attach
+else
+    tmux new-session -A -s default
+fi
+```
