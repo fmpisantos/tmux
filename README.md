@@ -18,6 +18,11 @@ setxkbmap -option caps:escape
 if [[ ! -z "$TMUX" && -n "$SSH_CONNECTION" ]]; then
     tmux attach
 else
-    tmux new-session -A -s default
+    first_session=$(tmux list-sessions -F "#{session_id}" | head -n 1)
+    if [[ -n "$first_session" ]]; then
+        tmux attach-session -t "$first_session"
+    else
+        tmux new-session -s default
+    fi
 fi
 ```
