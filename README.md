@@ -26,3 +26,7 @@ else
     fi
 fi
 ```
+## Install
+```bash
+sudo apt install fzf
+```
