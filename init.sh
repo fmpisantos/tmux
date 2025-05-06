@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Move tmux-sessionizer to ~/.local/bin
+# Copy tmux-sessionizer to ~/.local/bin
 mkdir -p ~/.local/bin
-mv ~/.config/tmux/tmux-sessionizer ~/.local/bin/
+cp ~/.config/tmux/tmux-sessionizer ~/.local/bin/
 chmod +x ~/.local/bin/tmux-sessionizer
 
-# Move .tmux.conf to ~/
-mv ~/.config/tmux/.tmux.conf ~/
+# Copy .tmux.conf to ~/
+cp ~/.config/tmux/.tmux.conf ~/
 
 echo '
 if [[ ! -z "$TMUX" && -n "$SSH_CONNECTION" ]]; then
