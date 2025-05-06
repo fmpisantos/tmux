@@ -6,7 +6,7 @@ mv ~/.config/tmux/tmux-sessionizer ~/.local/bin/
 chmod +x ~/.local/bin/tmux-sessionizer
 
 # Move .tmux.conf to ~/
-mv ~/.config/.tmux.conf ~/
+mv ~/.config/tmux/.tmux.conf ~/
 
 echo '
 if [[ ! -z "$TMUX" && -n "$SSH_CONNECTION" ]]; then
