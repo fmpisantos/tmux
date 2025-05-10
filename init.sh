@@ -16,7 +16,7 @@ else
     if [[ -n "$first_session" ]]; then
         tmux attach-session -t "$first_session"
     else
-        tmux new-session -s default
+        tmux new-session -ds default
     fi
 fi
 ' >> ~/.bashrc

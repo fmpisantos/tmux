@@ -18,7 +18,7 @@ tmux_running=$(pgrep tmux)
 initial_path="$selected"
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected \; \
+    tmux new-session -ds $selected_name -c $selected \; \
         set-option -t $selected_name @initial_path "$initial_path"
     exit 0
 fi
