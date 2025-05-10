@@ -1,8 +1,9 @@
-#!/bin/bash
 
+#!/bin/bash
 # Copy tmux-sessionizer to ~/.local/bin
 mkdir -p ~/.local/bin
 cp ~/.config/tmux/tmux-sessionizer ~/.local/bin/
+chmod +x ~/.config/tmux/trim-trail-lines.sh
 chmod +x ~/.local/bin/tmux-sessionizer
 
 # Copy .tmux.conf to ~/
