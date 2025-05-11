@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Copy tmux-sessionizer to ~/.local/bin
 mkdir -p ~/.local/bin
