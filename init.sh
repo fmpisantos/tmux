@@ -2,8 +2,10 @@
 # Copy tmux-sessionizer to ~/.local/bin
 mkdir -p ~/.local/bin
 cp ~/.config/tmux/tmux-sessionizer ~/.local/bin/
+cp ~/.config/tmux/tmux-scrollback.sh ~/.local/bin/
 chmod +x ~/.config/tmux/trim-trail-lines.sh
 chmod +x ~/.local/bin/tmux-sessionizer
+chmod +x ~/.config/tmux/tmux-scrollback.sh
 
 # Copy .tmux.conf to ~/
 cp ~/.config/tmux/.tmux.conf ~/
