@@ -11,4 +11,4 @@ tmux delete-buffer -b scrollback
 awk '/^[[:space:]]*$/{blank++; next} {for(i=0;i<blank;i++)print ""; blank=0; print}' "$tmpfile" > "${tmpfile}.clean"
 mv "${tmpfile}.clean" "$tmpfile"
 
-tmux new-window -n "Scrollback" "FROM_WEZTERM=1 nvim '$tmpfile'; rm -f '$tmpfile'"
+tmux new-window -n "Scrollback" "FROM_WEZTERM=1 nvim + '$tmpfile'; rm -f '$tmpfile'"
