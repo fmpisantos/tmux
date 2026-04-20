@@ -5,7 +5,21 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$((find ~/Projects/ -mindepth 0 -maxdepth 3 -type d && find ~/.config -mindepth 1 -maxdepth 3 -type d) 2> /dev/null | fzf)
+    # Order: depth 1, then 2, then 3; Projects before .config at each depth
+    # fzf's default algo (v2) already prioritizes consecutive matches
+    selected=$({
+        # Depth 0 (Projects root)
+        find ~/Projects/ -mindepth 0 -maxdepth 0 -type d
+        # Depth 1
+        find ~/Projects/ -mindepth 1 -maxdepth 1 -type d
+        find ~/.config -mindepth 1 -maxdepth 1 -type d
+        # Depth 2
+        find ~/Projects/ -mindepth 2 -maxdepth 2 -type d
+        find ~/.config -mindepth 2 -maxdepth 2 -type d
+        # Depth 3
+        find ~/Projects/ -mindepth 3 -maxdepth 3 -type d
+        find ~/.config -mindepth 3 -maxdepth 3 -type d
+    } 2> /dev/null | fzf --algo=v1 --tiebreak=index)
 fi
 
 if [[ -z $selected ]]; then
