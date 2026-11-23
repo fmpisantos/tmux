@@ -7,8 +7,8 @@ chmod +x ~/.config/tmux/trim-trail-lines.sh
 chmod +x ~/.local/bin/tmux-sessionizer
 chmod +x ~/.config/tmux/tmux-scrollback.sh
 
-# Copy .tmux.conf to ~/
-cp ~/.config/tmux/.tmux.conf ~/
+# Symlink .tmux.conf into ~/
+ln -sf ~/.config/tmux/.tmux.conf ~/.tmux.conf
 
 echo '
 if [[ ! -z "$TMUX" && -n "$SSH_CONNECTION" ]]; then
